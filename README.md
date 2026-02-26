@@ -1,0 +1,2 @@
+# pinecone-cursor-plugin
+WIP
