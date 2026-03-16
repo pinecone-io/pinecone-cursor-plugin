@@ -1,5 +1,5 @@
 ---
-name: pinecone-query
+name: query
 description: Query integrated indexes using text with Pinecone MCP. IMPORTANT - This skill ONLY works with integrated indexes (indexes with built-in Pinecone embedding models like multilingual-e5-large). For standard indexes or advanced vector operations, use the CLI skill instead. Requires PINECONE_API_KEY environment variable and Pinecone MCP server to be configured.
 argument-hint: query [q] index [indexName] namespace [ns] topK [k] reranker [rerankModel]
 ---
@@ -38,7 +38,7 @@ Utilize Pinecone MCP's `search-records` tool to search for records within a spec
 **IMPORTANT: Before proceeding, verify the Pinecone MCP tools are available.** If MCP tools are not accessible:
 - Inform the user that the Pinecone MCP server needs to be configured
 - Check if `PINECONE_API_KEY` environment variable is set
-- Direct them to the MCP setup documentation or the `pinecone-help` skill
+- Direct them to the MCP setup documentation or the `help` skill
 
 1. Parse the user's input for:
    - `query` (required): The text to search for.
