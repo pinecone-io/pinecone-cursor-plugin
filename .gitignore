@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Contextualization artifacts
+.contextualize-summary.md
+
+# Local dev docs
+REPO_MAINTENANCE.md
