@@ -185,15 +185,17 @@ async function main() {
     }
   }
 
-  // 7. Check MCP config
-  const mcpPath = path.join(repoRoot, ".mcp.json");
-  if (await pathExists(mcpPath)) {
-    const mcp = await readJsonFile(mcpPath, "MCP config");
+  // 7. Check MCP config (mcp.json or .mcp.json)
+  const mcpPath = path.join(repoRoot, "mcp.json");
+  const mcpPathDot = path.join(repoRoot, ".mcp.json");
+  const mcpFile = (await pathExists(mcpPath)) ? mcpPath : (await pathExists(mcpPathDot)) ? mcpPathDot : null;
+  if (mcpFile) {
+    const mcp = await readJsonFile(mcpFile, "MCP config");
     if (mcp && !mcp.mcpServers) {
-      addError('.mcp.json missing "mcpServers" key');
+      addError(`${path.basename(mcpFile)} missing "mcpServers" key`);
     }
   } else {
-    addWarning("No .mcp.json found");
+    addWarning("No mcp.json found");
   }
 
   // 8. Check hooks
