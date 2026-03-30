@@ -5,6 +5,7 @@
   "author": {
     "name": "Pinecone"
   },
+  "logo": "assets/logo.svg",
   "keywords": [
     "pinecone",
     "semantic search",
