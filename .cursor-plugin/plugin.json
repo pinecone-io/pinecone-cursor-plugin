@@ -1,6 +1,6 @@
 {
   "name": "pinecone",
-  "description": "Pinecone vector database integration. Streamline your Pinecone development with powerful tools for managing vector indexes, querying data, and rapid prototyping. Use slash commands like /quickstart to learn how to build with Pinecone and /query to quickly explore indexes. Access the Pinecone MCP server for creating, describing, upserting and querying indexes with Cursor. Perfect for developers building semantic search, RAG applications, recommendation systems, and other vector-based applications with Pinecone.",
+  "description": "Pinecone vector database integration for Cursor. Create and manage indexes, upsert data, and run semantic searches via the Pinecone MCP server. Build document Q&A assistants with citations, or get started fast with /quickstart. Great for semantic search, RAG, and agentic AI apps.",
   "version": "1.0.0",
   "author": {
     "name": "Pinecone"
