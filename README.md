@@ -42,6 +42,16 @@ Several skills include Python scripts (run via [`uv`](https://docs.astral.sh/uv/
 | `list.py` | assistant | List all assistants in your account |
 | `sync.py` | assistant | Sync local files to an assistant |
 
+## Installation
+
+Run the following command in Cursor chat:
+
+```
+/add-plugin pinecone
+```
+
+Or install directly from the marketplace: [cursor.com/marketplace/pinecone](https://cursor.com/marketplace/pinecone)
+
 ## Prerequisites
 
 - **Pinecone account** — free at [app.pinecone.io](https://app.pinecone.io/?sessionType=signup)
