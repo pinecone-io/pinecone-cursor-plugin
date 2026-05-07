@@ -150,7 +150,7 @@ Tell the user:
 
 ## Path B: Assistant Quickstart
 
-Guide the user through the Pinecone Assistant workflow using the existing assistant skills:
+Guide the user through the Pinecone Assistant workflow using the `assistant` skill (`/assistant` in Agent chat):
 
 ### Step 1 – Check for Documents
 
@@ -164,7 +164,7 @@ Before anything else, ask the user if they have files to upload. Pinecone Assist
 
 ### Step 2 – Create an Assistant
 
-Invoke `assistant` or run (add `--env-file .env` if using a `.env` file):
+Use the `/assistant` skill in Cursor Agent chat, or run (add `--env-file .env` if using a `.env` file):
 ```bash
 uv run ../assistant/scripts/create.py --name my-assistant
 ```
@@ -173,7 +173,7 @@ Explain: The assistant is a fully managed RAG service — upload documents, ask 
 
 ### Step 3 – Upload Documents
 
-Invoke `assistant` or run (add `--env-file .env` if using a `.env` file):
+Use the `/assistant` skill in Cursor Agent chat, or run (add `--env-file .env` if using a `.env` file):
 ```bash
 uv run ../assistant/scripts/upload.py --assistant my-assistant --source ./your-docs
 ```
@@ -182,7 +182,7 @@ Explain: Pinecone handles chunking, embedding, and indexing automatically — no
 
 ### Step 4 – Chat with the Assistant
 
-Invoke `assistant` or run (add `--env-file .env` if using a `.env` file):
+Use the `/assistant` skill in Cursor Agent chat, or run (add `--env-file .env` if using a `.env` file):
 ```bash
 uv run ../assistant/scripts/chat.py --assistant my-assistant --message "What are the main topics in these documents?"
 ```
@@ -191,8 +191,8 @@ Explain: Responses include citations with source file and page number.
 
 ### Next Steps for Assistant
 
-- Invoke `assistant` to keep the assistant up to date as documents change
-- Use the `assistant` skill to retrieve raw context snippets for custom workflows
+- Use `/assistant` in Agent chat to keep the assistant up to date as documents change
+- Use the assistant skill to retrieve raw context snippets for custom workflows
 - Every assistant is also an MCP server — see https://docs.pinecone.io/guides/assistant/mcp-server
 
 ---

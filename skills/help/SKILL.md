@@ -9,6 +9,8 @@ Pinecone is the leading vector database for building accurate and performant AI 
 
 Here's everything you need to get started and a summary of all available skills.
 
+These skills ship with the [pinecone-cursor-plugin](https://github.com/pinecone-io/pinecone-cursor-plugin) Cursor plugin.
+
 ---
 
 ## What You Need
@@ -33,6 +35,8 @@ Here's everything you need to get started and a summary of all available skills.
 
 ## Available Skills
 
+In Cursor Agent chat, invoke a skill with `/` plus the skill name (for example `/quickstart` or `/assistant`).
+
 | Skill | What it does |
 |---|---|
 | `quickstart` | Step-by-step onboarding — create an index, upload data, and run your first search |
@@ -40,19 +44,22 @@ Here's everything you need to get started and a summary of all available skills.
 | `cli` | Use the Pinecone CLI (`pc`) for terminal-based index and vector management |
 | `assistant` | Create, manage, and chat with Pinecone Assistants for document Q&A with citations |
 | `mcp` | Reference for all Pinecone MCP server tools and their parameters |
+| `full-text-search` | Build a full-text-search index — schema design, safe bulk ingestion, and query construction (`text` / `query_string` / dense / sparse scoring with text-match and metadata filters). **Preview API (`2026-01.alpha`); requires `pinecone` Python SDK ≥ 9.0.** |
 | `docs` | Curated links to official Pinecone documentation, organized by topic |
 
 ---
 
 ## Which skill should I use?
 
-**Just getting started?** → `quickstart`
+**Just getting started?** → `quickstart` (`/quickstart` in Agent chat)
 
 **Want to search an index you already have?**
 - Integrated index (built-in embedding model) → `query` (uses MCP)
 - Any other index type → `cli`
 
 **Working with documents and Q&A?** → `assistant`
+
+**Building a full-text search index (BM25-style keyword/phrase matching, optionally combined with dense or sparse vectors)?** → `full-text-search` (preview API, needs `pinecone` Python SDK ≥ 9.0)
 
 **Need to manage indexes, bulk upload vectors, or automate workflows?** → `cli`
 

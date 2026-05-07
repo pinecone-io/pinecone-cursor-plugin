@@ -118,7 +118,7 @@ def main(
 
     try:
         # Initialize Pinecone client
-        pc = Pinecone(api_key=api_key, source_tag="cursor_plugin:assistant")
+        pc = Pinecone(api_key=api_key, source_tag="claude_code_plugin:assistant")
         asst = pc.assistant.Assistant(assistant_name=assistant)
 
         console.print(Panel(

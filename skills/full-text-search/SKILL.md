@@ -1,9 +1,9 @@
 ---
-name: pinecone-full-text-search
+name: full-text-search
 description: Create, ingest into, and query a Pinecone full-text-search (FTS) index using the preview API (2026-01.alpha, public preview). Use when the user or agent asks to build a text search index on Pinecone, add dense or sparse vector fields, ingest documents, construct score_by clauses (text / query_string / dense_vector / sparse_vector), or compose with text-match filters ($match_phrase / $match_all / $match_any). Ships `scripts/ingest.py` for safe bulk ingestion (batch_upsert + error inspection + readiness polling); query construction is documented inline in this skill — write `documents.search(...)` calls directly, validated against `pc.preview.indexes.describe(...)` output.
 ---
 
-# pinecone-full-text-search
+# Full-text search
 
 > **Requires `pinecone` Python SDK ≥ 9.0** (`pip install pinecone>=9.0`). The FTS document-schema API lives under `pinecone.preview` and is incomplete or absent in earlier SDK builds. The packaged helper scripts pin `pinecone==9.0.0` via PEP 723 inline metadata; if you're writing your own code against this skill, pin v9 explicitly. The wire API version is `2026-01.alpha`.
 
@@ -108,7 +108,7 @@ You provide a prepared, schema-conformant JSONL file and the index name; the scr
 **Invocation:**
 
 ```bash
-uv run --script .claude/skills/pinecone-fts-index/scripts/ingest.py \
+uv run --script scripts/ingest.py \
   --data processed.jsonl \
   --index <index_name> \
   --sentinel-field <fts_field>
@@ -154,7 +154,7 @@ If a batch fails, the script prints every error message and exits non-zero. If t
 - The user is ingesting from a non-JSONL source (CSV, Parquet, Postgres dump). Convert to JSONL first; the script doesn't parse other formats.
 - The user explicitly asks you to write the ingestion code from scratch (teaching context). Honor the request and follow the canonical pattern: `documents.batch_upsert` + `result.has_errors` inspection + `documents.search` polling with sentinel and deadline.
 
-The script lives at `.claude/skills/pinecone-fts-index/scripts/ingest.py`. PEP 723 inline-metadata script — `uv run --script` installs `typer` and `pinecone` automatically on first invocation. No setup needed.
+The script lives at `scripts/ingest.py` (relative to this skill directory in the [pinecone-cursor-plugin](https://github.com/pinecone-io/pinecone-cursor-plugin) repo). PEP 723 inline-metadata script — `uv run --script` installs `typer` and `pinecone` automatically on first invocation. No setup needed.
 
 ## Use cases
 
