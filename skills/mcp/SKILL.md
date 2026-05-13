@@ -3,6 +3,8 @@ name: mcp
 description: Reference for the Pinecone MCP server tools. Documents all available tools - list-indexes, describe-index, describe-index-stats, create-index-for-model, upsert-records, search-records, cascading-search, and rerank-documents. Use when an agent needs to understand what Pinecone MCP tools are available, how to use them, or what parameters they accept.
 ---
 
+> Packaged as a Cursor plugin skill ([pinecone-io/pinecone-cursor-plugin](https://github.com/pinecone-io/pinecone-cursor-plugin)).
+
 # Pinecone MCP Tools Reference
 
 The Pinecone MCP server exposes the following tools to AI agents and IDEs. For setup and installation instructions, see the [MCP server guide](https://docs.pinecone.io/guides/operations/mcp-server#tools).

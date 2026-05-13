@@ -4,6 +4,8 @@ description: Guide for using the Pinecone CLI (pc) to manage Pinecone resources 
 argument-hint: install | auth | index [op] | vector [op] | backup | namespace
 ---
 
+> Packaged as a Cursor plugin skill ([pinecone-io/pinecone-cursor-plugin](https://github.com/pinecone-io/pinecone-cursor-plugin)).
+
 # Pinecone CLI (`pc`)
 
 Manage Pinecone from the terminal. The CLI is especially valuable for vector operations across **all index types** — something the MCP currently can't do.

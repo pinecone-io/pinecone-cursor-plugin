@@ -3,6 +3,8 @@ name: help
 description: Overview of all available Pinecone skills and what a user needs to get started. Invoke when a user asks what skills are available, how to get started with Pinecone, or what they need to set up before using any Pinecone skill.
 ---
 
+> Packaged as a Cursor plugin skill ([pinecone-io/pinecone-cursor-plugin](https://github.com/pinecone-io/pinecone-cursor-plugin)).
+
 # Pinecone Skills — Help & Overview
 
 Pinecone is the leading vector database for building accurate and performant AI applications at scale in production. It's useful for building semantic search, retrieval augmented generation, recommendation systems, and agentic applications.
@@ -15,7 +17,7 @@ Here's everything you need to get started and a summary of all available skills.
 
 ### Required
 - **Pinecone account** — free to create at https://app.pinecone.io/?sessionType=signup
-- **API key** — create one in the Pinecone console after signing up, then add it to a `.env` file at your workspace root (the bundled MCP config loads it via Cursor's `envFile` field):
+- **API key** — create one in the Pinecone console after signing up, then add it to a `.env` file at your workspace root (the bundled MCP configuration for this Cursor plugin loads it via Cursor's `envFile` setting):
   ```
   PINECONE_API_KEY=your-key
   ```
@@ -33,6 +35,8 @@ Here's everything you need to get started and a summary of all available skills.
 
 ## Available Skills
 
+In Cursor Agent chat, invoke a skill with `/` plus the skill name (for example `/quickstart`, `/assistant`, `/full-text-search`).
+
 | Skill | What it does |
 |---|---|
 | `quickstart` | Step-by-step onboarding — create an index, upload data, and run your first search |
@@ -40,6 +44,7 @@ Here's everything you need to get started and a summary of all available skills.
 | `cli` | Use the Pinecone CLI (`pc`) for terminal-based index and vector management |
 | `assistant` | Create, manage, and chat with Pinecone Assistants for document Q&A with citations |
 | `mcp` | Reference for all Pinecone MCP server tools and their parameters |
+| `full-text-search` | Build a full-text-search index — schema design, safe bulk ingestion, and query construction (`text` / `query_string` / dense / sparse scoring with text-match and metadata filters). **Preview API (`2026-01.alpha`); requires `pinecone` Python SDK ≥ 9.0.** |
 | `docs` | Curated links to official Pinecone documentation, organized by topic |
 
 ---
@@ -53,6 +58,8 @@ Here's everything you need to get started and a summary of all available skills.
 - Any other index type → `cli`
 
 **Working with documents and Q&A?** → `assistant`
+
+**Building a full-text search index (BM25-style keyword/phrase matching, optionally combined with dense or sparse vectors)?** → `full-text-search` (preview API, needs `pinecone` Python SDK ≥ 9.0)
 
 **Need to manage indexes, bulk upload vectors, or automate workflows?** → `cli`
 

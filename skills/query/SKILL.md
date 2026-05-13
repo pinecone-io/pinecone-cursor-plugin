@@ -4,6 +4,8 @@ description: Query integrated indexes using text with Pinecone MCP. IMPORTANT - 
 argument-hint: query [q] index [indexName] namespace [ns] topK [k] reranker [rerankModel]
 ---
 
+> Packaged as a Cursor plugin skill ([pinecone-io/pinecone-cursor-plugin](https://github.com/pinecone-io/pinecone-cursor-plugin)).
+
 # Pinecone Query Skill
 
 Search for records in Pinecone integrated indexes using natural language text queries via the Pinecone MCP server.
@@ -60,9 +62,11 @@ Utilize Pinecone MCP's `search-records` tool to search for records within a spec
 
 **`PINECONE_API_KEY` is required.** Get a free key at https://app.pinecone.io/?sessionType=signup
 
-If you get an access error, the key is likely missing. Ask the user to add `PINECONE_API_KEY=your-key` to a `.env` file at their workspace root — the bundled MCP config loads it via Cursor's `envFile` field — then restart their IDE or agent session. For terminal-only scripts, `export PINECONE_API_KEY="your-key"` also works.
+If you get an access error, the key is likely missing. Ask the user to set it and restart their IDE or agent session:
+- Add `PINECONE_API_KEY=your-key` to a `.env` file at the workspace root (the bundled MCP configuration for this Cursor plugin loads it via Cursor's `envFile` setting)
+- Terminal: `export PINECONE_API_KEY="your-key"`
 
-**IMPORTANT** At the moment, the /query command can only be used with integrated indexes, which use hosted Pinecone embedding models to embed and search for data.
+**IMPORTANT** In Cursor Agent chat, `/query` (this skill) works only with integrated indexes, which use hosted Pinecone embedding models to embed and search for data.
 If a user attempts to query an index that uses a third party API model such as OpenAI, or HuggingFace embedding models, remind them that this capability is not available yet
 with the Pinecone MCP server.
 

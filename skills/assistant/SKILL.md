@@ -3,6 +3,8 @@ name: assistant
 description: Create, manage, and chat with Pinecone Assistants for document Q&A with citations. Handles all assistant operations - create, upload, sync, chat, context retrieval, and list. Recognizes natural language like "create an assistant from my docs", "ask my assistant about X", or "upload my docs to Pinecone".
 ---
 
+> Packaged as a Cursor plugin skill ([pinecone-io/pinecone-cursor-plugin](https://github.com/pinecone-io/pinecone-cursor-plugin)).
+
 # Pinecone Assistant
 
 Pinecone Assistant is a fully managed RAG service. Upload documents, ask questions, get cited answers. No embedding pipelines or infrastructure required.
@@ -73,6 +75,6 @@ Handle chained requests naturally. Example:
 
 ## Prerequisites
 
-- `PINECONE_API_KEY` must be available — add it to a `.env` file at your workspace root (the bundled MCP config loads it via Cursor's `envFile` field) and run scripts with `uv run --env-file .env scripts/...`. For terminal-only scripts, `export PINECONE_API_KEY="your-key"` also works.
+- `PINECONE_API_KEY` must be available — add `PINECONE_API_KEY=your-key` to a `.env` file at your workspace root (the bundled MCP configuration for this Cursor plugin loads it via Cursor's `envFile` setting), and run scripts with `uv run --env-file .env scripts/...`. For terminal-only workflows, `export PINECONE_API_KEY="your-key"` also works
 - `uv` must be installed — [install uv](https://docs.astral.sh/uv/getting-started/installation/)
 - Get a free API key at: https://app.pinecone.io/?sessionType=signup

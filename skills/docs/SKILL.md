@@ -3,6 +3,8 @@ name: docs
 description: Curated documentation reference for developers building with Pinecone. Contains links to official docs organized by topic and data format references. Use when writing Pinecone code, looking up API parameters, or needing the correct format for vectors or records.
 ---
 
+> Packaged as a Cursor plugin skill ([pinecone-io/pinecone-cursor-plugin](https://github.com/pinecone-io/pinecone-cursor-plugin)).
+
 # Pinecone Developer Reference
 
 A curated index of Pinecone documentation. Fetch the relevant page(s) for the task at hand rather than relying on training data.
@@ -57,6 +59,7 @@ Use this as a last resort if you cannot find the relevant page below.
 | Semantic search | https://docs.pinecone.io/guides/search/semantic-search |
 | Hybrid search | https://docs.pinecone.io/guides/search/hybrid-search |
 | Lexical search | https://docs.pinecone.io/guides/search/lexical-search |
+| Full-text search (preview) — document-schema FTS indexes with `text` / `query_string` / dense / sparse scoring | https://docs.pinecone.io/guides/search/full-text-search |
 | Metadata filtering — narrow results and speed up searches | https://docs.pinecone.io/guides/search/filter-by-metadata |
 
 ---

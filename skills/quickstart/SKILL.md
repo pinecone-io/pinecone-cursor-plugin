@@ -3,6 +3,8 @@ name: quickstart
 description: Interactive Pinecone quickstart for new developers. Choose between two paths - Database (create an integrated index, upsert data, and query using Pinecone MCP + Python) or Assistant (create a Pinecone Assistant for document Q&A). Use when a user wants to get started with Pinecone for the first time or wants a guided tour of Pinecone's tools.
 ---
 
+> Packaged as a Cursor plugin skill ([pinecone-io/pinecone-cursor-plugin](https://github.com/pinecone-io/pinecone-cursor-plugin)).
+
 # Pinecone Quickstart
 
 Welcome! This skill walks you through your first Pinecone experience using the tools available to you. In this quickstart,
@@ -10,7 +12,7 @@ you will learn how to do a simple form of semantic search over some example data
 
 ## Prerequisites
 
-Before starting either path, verify the API key works by calling `list-indexes` via the Pinecone MCP. If it succeeds, proceed. If it fails, ask the user to add `PINECONE_API_KEY=your-key` to a `.env` file at their workspace root (the bundled MCP config loads it via Cursor's `envFile` field) and restart their IDE/agent session. For terminal-only scripts, `export PINECONE_API_KEY="your-key"` also works.
+Before starting either path, verify the API key works by calling `list-indexes` via the Pinecone MCP. If it succeeds, proceed. If it fails, ask the user to add `PINECONE_API_KEY=your-key` to a `.env` file at their workspace root (the bundled MCP configuration for this Cursor plugin loads it via Cursor's `envFile` setting) and restart the IDE/agent session. For terminal-only scripts, `export PINECONE_API_KEY="your-key"` also works.
 
 Then retry `list-indexes` to confirm.
 
@@ -161,7 +163,7 @@ Before anything else, ask the user if they have files to upload. Pinecone Assist
 
 ### Step 2 – Create an Assistant
 
-Invoke `assistant` or run (add `--env-file .env` if using a `.env` file):
+Invoke the `assistant` skill (for example `/assistant` in Cursor Agent chat) or run (add `--env-file .env` if using a `.env` file):
 ```bash
 uv run ../assistant/scripts/create.py --name my-assistant
 ```
@@ -170,7 +172,7 @@ Explain: The assistant is a fully managed RAG service — upload documents, ask 
 
 ### Step 3 – Upload Documents
 
-Invoke `assistant` or run (add `--env-file .env` if using a `.env` file):
+Invoke the `assistant` skill or run (add `--env-file .env` if using a `.env` file):
 ```bash
 uv run ../assistant/scripts/upload.py --assistant my-assistant --source ./your-docs
 ```
@@ -179,7 +181,7 @@ Explain: Pinecone handles chunking, embedding, and indexing automatically — no
 
 ### Step 4 – Chat with the Assistant
 
-Invoke `assistant` or run (add `--env-file .env` if using a `.env` file):
+Invoke the `assistant` skill or run (add `--env-file .env` if using a `.env` file):
 ```bash
 uv run ../assistant/scripts/chat.py --assistant my-assistant --message "What are the main topics in these documents?"
 ```
@@ -188,7 +190,7 @@ Explain: Responses include citations with source file and page number.
 
 ### Next Steps for Assistant
 
-- Invoke `assistant` to keep the assistant up to date as documents change
+- Invoke the `assistant` skill to keep the assistant up to date as documents change
 - Use the `assistant` skill to retrieve raw context snippets for custom workflows
 - Every assistant is also an MCP server — see https://docs.pinecone.io/guides/assistant/mcp-server
 
@@ -202,7 +204,7 @@ Create a `.env` file at the workspace root:
 ```
 PINECONE_API_KEY=your-key
 ```
-The bundled MCP config loads it via Cursor's `envFile` field. For running scripts directly, use `uv run --env-file .env scripts/...` (or `export PINECONE_API_KEY="your-key"` for terminal use). Restart your IDE/agent session after setting.
+The bundled MCP configuration for this Cursor plugin loads it via Cursor's `envFile` setting. For running scripts directly, use `uv run --env-file .env scripts/...` (or `export PINECONE_API_KEY="your-key"` for terminal use). Restart your IDE/agent session after setting.
 
 **MCP tools not available**
 - Verify the Pinecone MCP server is configured in your IDE's MCP settings
