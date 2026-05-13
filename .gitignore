@@ -12,5 +12,8 @@ Thumbs.db
 # Contextualization artifacts
 .contextualize-summary.md
 
+# Cursor agent logs
+.cursor-logs/
+
 # Local dev docs
 REPO_MAINTENANCE.md

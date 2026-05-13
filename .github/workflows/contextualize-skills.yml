@@ -88,7 +88,7 @@ jobs:
           - Each skill lives in \`skills/<skill-name>/SKILL.md\`
           - SKILL.md requires YAML frontmatter with \`name\` (lowercase kebab-case, must match folder name) and \`description\`
           - Skills can include \`scripts/\`, \`references/\`, and \`assets/\` subdirectories
-          - Folder names must NOT have a \`pinecone-\` prefix
+          - Folder names MUST be prefixed with \`pinecone-\` (e.g. \`pinecone-quickstart\`, \`pinecone-cli\`). Add the prefix if it's missing.
           - Only \`.md\` files should be modified — never touch \`.py\` scripts
 
           ## Steps
@@ -111,8 +111,13 @@ jobs:
              - Do NOT modify .py files in scripts/ directories — leave them exactly as they are
              - Do not change the meaning or content of the skills
              - Only change structure, formatting, field names, or terminology as needed
-          3. Rename skill directories to strip the \`pinecone-\` prefix if present.
-             Use \`mv skills/pinecone-foo skills/foo\` for each directory that has the prefix.
+          3. Rename skill directories to ADD the \`pinecone-\` prefix if missing.
+             For each \`skills/<name>\` that does not start with \`pinecone-\`, run
+             \`git mv skills/<name> skills/pinecone-<name>\` and update the \`name:\`
+             field in that skill's \`SKILL.md\` frontmatter to match the new folder.
+             Also update any cross-references (slash commands like \`/<name>\`,
+             sibling-skill paths like \`../<name>/scripts/...\`, and "the <name> skill"
+             prose) to the prefixed form.
           4. Validate against the Cursor plugin submission checklist:
              - .cursor-plugin/plugin.json exists and is valid JSON
              - Plugin \`name\` is lowercase kebab-case
