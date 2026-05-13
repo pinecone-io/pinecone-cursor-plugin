@@ -1,14 +1,13 @@
 {
   "mcpServers": {
     "pinecone": {
+      "type": "stdio",
       "command": "npx",
       "args": [
         "-y",
         "@pinecone-database/mcp"
       ],
-      "env": {
-        "PINECONE_API_KEY": "${PINECONE_API_KEY}"
-      }
+      "envFile": "${workspaceFolder}/.env"
     }
   }
 }

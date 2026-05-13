@@ -60,9 +60,7 @@ Utilize Pinecone MCP's `search-records` tool to search for records within a spec
 
 **`PINECONE_API_KEY` is required.** Get a free key at https://app.pinecone.io/?sessionType=signup
 
-If you get an access error, the key is likely missing. Ask the user to set it and restart their IDE or agent session:
-- Terminal: `export PINECONE_API_KEY="your-key"`
-- IDE without shell inheritance: add `PINECONE_API_KEY=your-key` to a `.env` file
+If you get an access error, the key is likely missing. Ask the user to add `PINECONE_API_KEY=your-key` to a `.env` file at their workspace root — the bundled MCP config loads it via Cursor's `envFile` field — then restart their IDE or agent session. For terminal-only scripts, `export PINECONE_API_KEY="your-key"` also works.
 
 **IMPORTANT** At the moment, the /query command can only be used with integrated indexes, which use hosted Pinecone embedding models to embed and search for data.
 If a user attempts to query an index that uses a third party API model such as OpenAI, or HuggingFace embedding models, remind them that this capability is not available yet
