@@ -55,10 +55,11 @@ Or install directly from the marketplace: [cursor.com/marketplace/pinecone](http
 ## Prerequisites
 
 - **Pinecone account** — free at [app.pinecone.io](https://app.pinecone.io/?sessionType=signup)
-- **API key** — create one in the Pinecone console, then set it:
-  ```bash
-  export PINECONE_API_KEY="your-key"
+- **API key** — create one in the Pinecone console, then add it to a `.env` file at your workspace root:
   ```
+  PINECONE_API_KEY=your-key
+  ```
+  The bundled MCP config loads this file via Cursor's [`envFile`](https://cursor.com/docs/mcp) field, so you don't need to export the key in your shell. (If you prefer, `export PINECONE_API_KEY="your-key"` also works for terminal scripts.)
 - **Node.js v18+** — required for the MCP server (`npx`)
 
 ### Optional
@@ -71,7 +72,7 @@ Or install directly from the marketplace: [cursor.com/marketplace/pinecone](http
 ## Getting started
 
 1. Install the plugin from the [Cursor Marketplace](https://cursor.com/marketplace)
-2. Set your `PINECONE_API_KEY` environment variable
+2. Add `PINECONE_API_KEY=your-key` to a `.env` file at your workspace root (Cursor will load it into the MCP server via `envFile`)
 3. Open Cursor Agent chat and type `/quickstart` to get started
 4. Verify the MCP server is connected: Cursor Settings > Features > Model Context Protocol
 

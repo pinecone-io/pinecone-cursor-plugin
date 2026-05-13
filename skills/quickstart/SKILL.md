@@ -10,10 +10,7 @@ you will learn how to do a simple form of semantic search over some example data
 
 ## Prerequisites
 
-Before starting either path, verify the API key works by calling `list-indexes` via the Pinecone MCP. If it succeeds, proceed. If it fails, ask the user to set their key:
-
-- Terminal: `export PINECONE_API_KEY="your-key"`
-- Or create a `.env` file in the project root: `PINECONE_API_KEY=your-key`
+Before starting either path, verify the API key works by calling `list-indexes` via the Pinecone MCP. If it succeeds, proceed. If it fails, ask the user to add `PINECONE_API_KEY=your-key` to a `.env` file at their workspace root (the bundled MCP config loads it via Cursor's `envFile` field) and restart their IDE/agent session. For terminal-only scripts, `export PINECONE_API_KEY="your-key"` also works.
 
 Then retry `list-indexes` to confirm.
 
@@ -201,19 +198,15 @@ Explain: Responses include citations with source file and page number.
 
 **`PINECONE_API_KEY` not set**
 
-Terminal environments:
-```bash
-export PINECONE_API_KEY="your-key"
-```
-IDEs that don't inherit shell variables: create a `.env` file in the project root:
+Create a `.env` file at the workspace root:
 ```
 PINECONE_API_KEY=your-key
 ```
-Then use `uv run --env-file .env` when running scripts. Restart your IDE/agent session after setting.
+The bundled MCP config loads it via Cursor's `envFile` field. For running scripts directly, use `uv run --env-file .env scripts/...` (or `export PINECONE_API_KEY="your-key"` for terminal use). Restart your IDE/agent session after setting.
 
 **MCP tools not available**
 - Verify the Pinecone MCP server is configured in your IDE's MCP settings
-- Check that `PINECONE_API_KEY` is set before the MCP server starts
+- Check that `PINECONE_API_KEY` is present in your workspace `.env` (or process env) before the MCP server starts
 
 **Index already exists**
 - The upsert script is safe to re-run — it will upsert over existing records
