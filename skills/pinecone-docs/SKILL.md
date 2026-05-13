@@ -1,5 +1,5 @@
 ---
-name: docs
+name: pinecone-docs
 description: Curated documentation reference for developers building with Pinecone. Contains links to official docs organized by topic and data format references. Use when writing Pinecone code, looking up API parameters, or needing the correct format for vectors or records.
 ---
 

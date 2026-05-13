@@ -10,13 +10,14 @@ Skills are specialized agent capabilities invoked automatically by Cursor Agent 
 
 | Skill | What it does |
 |-------|-------------|
-| `/quickstart` | Step-by-step onboarding — create an index, upload data, and run your first search. Choose between a **Database** path (vector search) or **Assistant** path (document Q&A). |
-| `/query` | Search integrated indexes using natural language text via the Pinecone MCP server. |
-| `/cli` | Use the Pinecone CLI (`pc`) for terminal-based index and vector management. |
-| `/assistant` | Create, manage, and chat with Pinecone Assistants for document Q&A with citations. Includes scripts for uploading files, syncing changes, and retrieving context. |
-| `/mcp` | Reference documentation for all Pinecone MCP server tools and their parameters. |
-| `/docs` | Curated links to official Pinecone documentation, organized by topic. |
-| `/help` | Overview of all available skills and what you need to get started. |
+| `/pinecone-quickstart` | Step-by-step onboarding — create an index, upload data, and run your first search. Choose between a **Database** path (vector search) or **Assistant** path (document Q&A). |
+| `/pinecone-query` | Search integrated indexes using natural language text via the Pinecone MCP server. |
+| `/pinecone-cli` | Use the Pinecone CLI (`pc`) for terminal-based index and vector management. |
+| `/pinecone-assistant` | Create, manage, and chat with Pinecone Assistants for document Q&A with citations. Includes scripts for uploading files, syncing changes, and retrieving context. |
+| `/pinecone-full-text-search` | Create, ingest into, and query a Pinecone full-text-search (FTS) index using the preview API. |
+| `/pinecone-mcp` | Reference documentation for all Pinecone MCP server tools and their parameters. |
+| `/pinecone-docs` | Curated links to official Pinecone documentation, organized by topic. |
+| `/pinecone-help` | Overview of all available skills and what you need to get started. |
 
 ### MCP Server
 
@@ -33,14 +34,15 @@ Several skills include Python scripts (run via [`uv`](https://docs.astral.sh/uv/
 
 | Script | Skill | Purpose |
 |--------|-------|---------|
-| `upsert.py` | quickstart | Seed an index with sample data |
-| `quickstart_complete.py` | quickstart | Standalone end-to-end quickstart |
-| `create.py` | assistant | Create a new Pinecone Assistant |
-| `upload.py` | assistant | Upload files to an assistant |
-| `chat.py` | assistant | Chat with an assistant |
-| `context.py` | assistant | Retrieve context snippets from an assistant |
-| `list.py` | assistant | List all assistants in your account |
-| `sync.py` | assistant | Sync local files to an assistant |
+| `upsert.py` | pinecone-quickstart | Seed an index with sample data |
+| `quickstart_complete.py` | pinecone-quickstart | Standalone end-to-end quickstart |
+| `create.py` | pinecone-assistant | Create a new Pinecone Assistant |
+| `upload.py` | pinecone-assistant | Upload files to an assistant |
+| `chat.py` | pinecone-assistant | Chat with an assistant |
+| `context.py` | pinecone-assistant | Retrieve context snippets from an assistant |
+| `list.py` | pinecone-assistant | List all assistants in your account |
+| `sync.py` | pinecone-assistant | Sync local files to an assistant |
+| `ingest.py` | pinecone-full-text-search | Bulk-ingest a prepared JSONL into an FTS index |
 
 ## Installation
 
@@ -73,7 +75,7 @@ Or install directly from the marketplace: [cursor.com/marketplace/pinecone](http
 
 1. Install the plugin from the [Cursor Marketplace](https://cursor.com/marketplace)
 2. Add `PINECONE_API_KEY=your-key` to a `.env` file at your workspace root (Cursor will load it into the MCP server via `envFile`)
-3. Open Cursor Agent chat and type `/quickstart` to get started
+3. Open Cursor Agent chat and type `/pinecone-quickstart` to get started
 4. Verify the MCP server is connected: Cursor Settings > Features > Model Context Protocol
 
 ## Verifying the installation
