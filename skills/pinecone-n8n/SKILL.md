@@ -1,10 +1,11 @@
 ---
 name: pinecone-n8n
 description: Build n8n workflows using the Pinecone Assistant node or Pinecone Vector Store node. Use when building RAG pipelines, chat-with-docs workflows, configuring Pinecone nodes in n8n, troubleshooting Pinecone n8n nodes, or asking about best practices for Pinecone in n8n.
-allowed-tools: Write
 ---
 
 # Pinecone n8n Workflow Skill
+
+In Cursor **Agent** chat, run this skill with **`/pinecone-n8n`**.
 
 This skill helps you build n8n workflows with Pinecone nodes following best practices. It covers two Pinecone nodes:
 - **Pinecone Assistant** (`@pinecone-database/n8n-nodes-pinecone-assistant`) — recommended for most use cases
@@ -688,3 +689,7 @@ When reviewing an existing workflow:
 9. **Multimodal retrieval**: `includeMultimodalContext: true` and `includeBinaryContent: true` on `getContextSnippets` when the workflow needs image chunks alongside text
 10. **Chunk size** is appropriate for the content type (see chunking guidance above)
 11. **Index exists** with correct dimensions before the workflow runs
+
+---
+
+*These skills are distributed as part of the [Pinecone Cursor plugin](https://github.com/pinecone-io/pinecone-cursor-plugin).*

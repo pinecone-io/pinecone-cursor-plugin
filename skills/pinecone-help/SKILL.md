@@ -9,23 +9,25 @@ Pinecone is the leading vector database for building accurate and performant AI 
 
 Here's everything you need to get started and a summary of all available skills.
 
+In Cursor **Agent** chat, invoke a skill by typing **`/`** and the skill name (for example **`/pinecone-n8n`**, **`/pinecone-help`**, or **`/pinecone-quickstart`**).
+
 ---
 
 ## What You Need
 
 ### Required
 - **Pinecone account** — free to create at https://app.pinecone.io/?sessionType=signup
-- **API key** — create one in the Pinecone console after signing up, then either export it in your terminal:
-  ```bash
-  export PINECONE_API_KEY="your-key"
+- **API key** — create one in the Pinecone console after signing up, then add it to a `.env` file at your workspace root (the bundled MCP config loads it via Cursor's `envFile` field):
   ```
-  Or add it to a `.env` file if your IDE doesn't inherit shell variables: `PINECONE_API_KEY=your-key`
+  PINECONE_API_KEY=your-key
+  ```
+  For terminal-only scripts and shells that do not inherit your IDE environment, you can also `export PINECONE_API_KEY="your-key"`.
 
 ### Optional (unlock more capabilities)
 
 | Tool | What it enables | Install |
 |---|---|---|
-| **Pinecone MCP server** | Use Pinecone directly inside your AI agent/IDE without writing code | [Setup guide](https://docs.pinecone.io/guides/operations/mcp-server#tools) |
+| **Pinecone MCP server** | Use Pinecone directly inside Cursor (MCP) without writing code | [Setup guide](https://docs.pinecone.io/guides/operations/mcp-server#tools) |
 | **Pinecone CLI (`pc`)** | Manage all index types from the terminal, batch operations, backups, CI/CD | `brew tap pinecone-io/tap && brew install pinecone-io/tap/pinecone` |
 | **uv** | Run the packaged Python scripts included in these skills | [Install uv](https://docs.astral.sh/uv/getting-started/installation/) |
 
@@ -65,3 +67,7 @@ Here's everything you need to get started and a summary of all available skills.
 **Looking up API parameters or SDK usage?** → `pinecone-docs`
 
 **Need to understand what MCP tools are available?** → `pinecone-mcp`
+
+---
+
+*These skills are distributed as part of the [Pinecone Cursor plugin](https://github.com/pinecone-io/pinecone-cursor-plugin).*
