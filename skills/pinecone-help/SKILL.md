@@ -15,11 +15,11 @@ Here's everything you need to get started and a summary of all available skills.
 
 ### Required
 - **Pinecone account** — free to create at https://app.pinecone.io/?sessionType=signup
-- **API key** — create one in the Pinecone console after signing up, then add it to a `.env` file at your workspace root (the bundled MCP config loads it via Cursor's `envFile` field):
+- **API key** — create one in the Pinecone console after signing up, then either export it in your terminal:
+  ```bash
+  export PINECONE_API_KEY="your-key"
   ```
-  PINECONE_API_KEY=your-key
-  ```
-  For terminal scripts you can also `export PINECONE_API_KEY="your-key"`.
+  Or add it to a `.env` file if your IDE doesn't inherit shell variables: `PINECONE_API_KEY=your-key`
 
 ### Optional (unlock more capabilities)
 
@@ -39,8 +39,8 @@ Here's everything you need to get started and a summary of all available skills.
 | `pinecone-query` | Search integrated indexes using natural language text via the Pinecone MCP |
 | `pinecone-cli` | Use the Pinecone CLI (`pc`) for terminal-based index and vector management |
 | `pinecone-assistant` | Create, manage, and chat with Pinecone Assistants for document Q&A with citations |
-| `pinecone-full-text-search` | Create, ingest into, and query a Pinecone full-text-search (FTS) index using the preview API |
 | `pinecone-mcp` | Reference for all Pinecone MCP server tools and their parameters |
+| `pinecone-full-text-search` | Build a full-text-search index — schema design, safe bulk ingestion, and query construction (`text` / `query_string` / dense / sparse scoring with text-match and metadata filters). **Preview API (`2026-01.alpha`); requires `pinecone` Python SDK ≥ 9.0.** |
 | `pinecone-docs` | Curated links to official Pinecone documentation, organized by topic |
 
 ---
@@ -55,7 +55,7 @@ Here's everything you need to get started and a summary of all available skills.
 
 **Working with documents and Q&A?** → `pinecone-assistant`
 
-**Building a full-text-search index (BM25, hybrid, schemas)?** → `pinecone-full-text-search`
+**Building a full-text search index (BM25-style keyword/phrase matching, optionally combined with dense or sparse vectors)?** → `pinecone-full-text-search` (preview API, needs `pinecone` Python SDK ≥ 9.0)
 
 **Need to manage indexes, bulk upload vectors, or automate workflows?** → `pinecone-cli`
 
