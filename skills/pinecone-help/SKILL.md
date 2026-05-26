@@ -9,6 +9,8 @@ Pinecone is the leading vector database for building accurate and performant AI 
 
 Here's everything you need to get started and a summary of all available skills.
 
+Invoke any skill from Cursor Agent chat with `/pinecone-<skill-name>` (for example, `/pinecone-quickstart` or `/pinecone-n8n`).
+
 ---
 
 ## What You Need
@@ -39,9 +41,10 @@ Here's everything you need to get started and a summary of all available skills.
 | `pinecone-query` | Search integrated indexes using natural language text via the Pinecone MCP |
 | `pinecone-cli` | Use the Pinecone CLI (`pc`) for terminal-based index and vector management |
 | `pinecone-assistant` | Create, manage, and chat with Pinecone Assistants for document Q&A with citations |
-| `pinecone-full-text-search` | Create, ingest into, and query a Pinecone full-text-search (FTS) index using the preview API |
 | `pinecone-mcp` | Reference for all Pinecone MCP server tools and their parameters |
+| `pinecone-full-text-search` | Build a full-text-search index — schema design, safe bulk ingestion, and query construction (`text` / `query_string` / dense / sparse scoring with text-match and metadata filters). **Preview API (`2026-01.alpha`); requires `pinecone` Python SDK ≥ 9.0.** |
 | `pinecone-docs` | Curated links to official Pinecone documentation, organized by topic |
+| `pinecone-n8n` | Build n8n workflows with the Pinecone Assistant node or Pinecone Vector Store node, including best practices and full workflow JSON generation |
 
 ---
 
@@ -55,7 +58,9 @@ Here's everything you need to get started and a summary of all available skills.
 
 **Working with documents and Q&A?** → `pinecone-assistant`
 
-**Building a full-text-search index (BM25, hybrid, schemas)?** → `pinecone-full-text-search`
+**Building a full-text search index (BM25-style keyword/phrase matching, optionally combined with dense or sparse vectors)?** → `pinecone-full-text-search` (preview API, needs `pinecone` Python SDK ≥ 9.0)
+
+**Building an n8n workflow with Pinecone (RAG pipeline, chat with docs)?** → `pinecone-n8n`
 
 **Need to manage indexes, bulk upload vectors, or automate workflows?** → `pinecone-cli`
 
