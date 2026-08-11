@@ -8,6 +8,8 @@ argument-hint: query [q] index [indexName] namespace [ns] topK [k] reranker [rer
 
 Search for records in Pinecone integrated indexes using natural language text queries via the Pinecone MCP server.
 
+Whenever this skill asks the user to choose between options, confirm a destructive step, or pick from a list, ask in plain prose, list the options, and wait for their answer before continuing.
+
 ## What is this skill for?
 
 This skill provides a simple way to query **integrated indexes** (indexes with built-in Pinecone embedding models) using text queries. The MCP server automatically converts your text into embeddings and searches the index.
@@ -60,9 +62,13 @@ Utilize Pinecone MCP's `search-records` tool to search for records within a spec
 
 **`PINECONE_API_KEY` is required.** Get a free key at https://app.pinecone.io/?sessionType=signup
 
-If you get an access error, the key is likely missing. Ask the user to add `PINECONE_API_KEY=your-key` to a `.env` file at their workspace root — the bundled MCP config loads it via Cursor's `envFile` field — then restart their IDE or agent session. For terminal-only scripts, `export PINECONE_API_KEY="your-key"` also works.
+If you get an access error, the key is likely missing. Ask the user to set it and restart their IDE or agent session:
+- Add `PINECONE_API_KEY=your-key` to a `.env` file at your workspace root. The
+  bundled MCP config reads it through Cursor's `envFile` field.
+- For scripts, either `export PINECONE_API_KEY="your-key"` in your terminal or
+  run them with `uv run --env-file .env scripts/...`.
 
-**IMPORTANT** At the moment, the /pinecone-query command can only be used with integrated indexes, which use hosted Pinecone embedding models to embed and search for data.
+**IMPORTANT** At the moment, the pinecone-query skill can only be used with integrated indexes, which use hosted Pinecone embedding models to embed and search for data.
 If a user attempts to query an index that uses a third party API model such as OpenAI, or HuggingFace embedding models, remind them that this capability is not available yet
 with the Pinecone MCP server.
 

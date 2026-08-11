@@ -61,7 +61,7 @@ def main(
             else:
                 console.print("[yellow]No assistants found.[/yellow]\n")
                 console.print("Create your first assistant with:")
-                console.print("  [cyan]/pinecone:assistant-create name [assistant-name][/cyan]")
+                console.print("  [cyan]uv run create.py --name ASSISTANT_NAME[/cyan]")
             return
 
         if json_output:
@@ -195,10 +195,10 @@ def main(
 
             # Next steps panel
             next_steps = """[bold]Next steps:[/bold]
-• List with files: [cyan]/pinecone:assistant-list --files[/cyan]
-• Chat: [cyan]/pinecone:assistant-chat assistant [name] message [your question][/cyan]
-• Upload: [cyan]/pinecone:assistant-upload assistant [name] source [path][/cyan]
-• Context: [cyan]/pinecone:assistant-context assistant [name] query [search][/cyan]"""
+• List with files: [cyan]uv run list.py --files[/cyan]
+• Chat: [cyan]uv run chat.py --assistant NAME --message "YOUR QUESTION"[/cyan]
+• Upload: [cyan]uv run upload.py --assistant NAME --source PATH[/cyan]
+• Context: [cyan]uv run context.py --assistant NAME --query "SEARCH TEXT"[/cyan]"""
 
             console.print(Panel(next_steps, title="Available Commands", border_style="blue"))
 
