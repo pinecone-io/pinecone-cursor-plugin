@@ -131,8 +131,8 @@ def main(
 
             # Suggest next action
             next_action = f"""[bold]Next steps:[/bold]
-• Ask a question: [cyan]/pinecone:assistant-chat assistant {assistant} message [your question][/cyan]
-• Upload more files: [cyan]/pinecone:assistant-upload assistant {assistant} source [path][/cyan]"""
+• Ask a question: [cyan]uv run chat.py --assistant {assistant} --message "YOUR QUESTION"[/cyan]
+• Upload more files: [cyan]uv run upload.py --assistant {assistant} --source PATH[/cyan]"""
             console.print(Panel(next_action, title="What's Next?", border_style="green"))
 
     except AttributeError as e:
@@ -141,7 +141,7 @@ def main(
         console.print(f"[dim]Details: {e}[/dim]")
         console.print("\n[yellow]Note:[/yellow] Context API requires SDK version with assistant.context() support")
         console.print("\n[yellow]Try using chat instead:[/yellow]")
-        console.print(f"  /pinecone:assistant-chat assistant {assistant} message \"{query}\"")
+        console.print(f"  uv run chat.py --assistant {assistant} --message \"{query}\"")
         raise typer.Exit(1)
     except Exception as e:
         console.print(f"[red]Error: {e}[/red]")

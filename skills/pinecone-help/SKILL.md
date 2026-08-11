@@ -9,7 +9,7 @@ Pinecone is the leading vector database for building accurate and performant AI 
 
 Here's everything you need to get started and a summary of all available skills.
 
-Invoke any skill from Cursor Agent chat with `/pinecone-<skill-name>` (for example, `/pinecone-quickstart` or `/pinecone-n8n`).
+Invoke any skill from Cursor Agent chat with `/pinecone-<skill-name>` — for example `/pinecone-quickstart` or `/pinecone-n8n`.
 
 ---
 
@@ -17,11 +17,12 @@ Invoke any skill from Cursor Agent chat with `/pinecone-<skill-name>` (for examp
 
 ### Required
 - **Pinecone account** — free to create at https://app.pinecone.io/?sessionType=signup
-- **API key** — create one in the Pinecone console after signing up, then add it to a `.env` file at your workspace root (the bundled MCP config loads it via Cursor's `envFile` field):
-  ```
-  PINECONE_API_KEY=your-key
-  ```
-  For terminal scripts you can also `export PINECONE_API_KEY="your-key"`.
+- **API key** — create one in the Pinecone console after signing up, then make it
+  available to this environment:
+  - Add `PINECONE_API_KEY=your-key` to a `.env` file at your workspace root. The
+  bundled MCP config reads it through Cursor's `envFile` field.
+- For scripts, either `export PINECONE_API_KEY="your-key"` in your terminal or
+  run them with `uv run --env-file .env scripts/...`.
 
 ### Optional (unlock more capabilities)
 

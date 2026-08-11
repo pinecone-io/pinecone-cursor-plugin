@@ -10,6 +10,8 @@ Pinecone Assistant is a fully managed RAG service. Upload documents, ask questio
 > All scripts are in `scripts/` relative to this skill directory.
 > Run with: `uv run scripts/script_name.py [arguments]`
 
+Whenever this skill asks the user to choose between options, confirm a destructive step, or pick from a list, ask in plain prose, list the options, and wait for their answer before continuing.
+
 ## Operations
 
 | What to do | Script | Key args |
@@ -73,6 +75,10 @@ Handle chained requests naturally. Example:
 
 ## Prerequisites
 
-- `PINECONE_API_KEY` must be available — add it to a `.env` file at your workspace root (the bundled MCP config loads it via Cursor's `envFile` field) and run scripts with `uv run --env-file .env scripts/...`. For terminal-only scripts, `export PINECONE_API_KEY="your-key"` also works.
+- `PINECONE_API_KEY` must be available:
+- Add `PINECONE_API_KEY=your-key` to a `.env` file at your workspace root. The
+  bundled MCP config reads it through Cursor's `envFile` field.
+- For scripts, either `export PINECONE_API_KEY="your-key"` in your terminal or
+  run them with `uv run --env-file .env scripts/...`.
 - `uv` must be installed — [install uv](https://docs.astral.sh/uv/getting-started/installation/)
 - Get a free API key at: https://app.pinecone.io/?sessionType=signup

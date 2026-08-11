@@ -8,9 +8,16 @@ description: Interactive Pinecone quickstart for new developers. Choose between 
 Welcome! This skill walks you through your first Pinecone experience using the tools available to you. In this quickstart,
 you will learn how to do a simple form of semantic search over some example data.
 
+Whenever this skill asks the user to choose between options, confirm a destructive step, or pick from a list, ask in plain prose, list the options, and wait for their answer before continuing.
+
 ## Prerequisites
 
-Before starting either path, verify the API key works by calling `list-indexes` via the Pinecone MCP. If it succeeds, proceed. If it fails, ask the user to add `PINECONE_API_KEY=your-key` to a `.env` file at their workspace root (the bundled MCP config loads it via Cursor's `envFile` field) and restart their IDE/agent session. For terminal-only scripts, `export PINECONE_API_KEY="your-key"` also works.
+Before starting either path, verify the API key works by calling `list-indexes` via the Pinecone MCP. If it succeeds, proceed. If it fails, ask the user to set their key:
+
+- Add `PINECONE_API_KEY=your-key` to a `.env` file at your workspace root. The
+  bundled MCP config reads it through Cursor's `envFile` field.
+- For scripts, either `export PINECONE_API_KEY="your-key"` in your terminal or
+  run them with `uv run --env-file .env scripts/...`.
 
 Then retry `list-indexes` to confirm.
 
@@ -189,7 +196,7 @@ Explain: Responses include citations with source file and page number.
 ### Next Steps for Assistant
 
 - Invoke `pinecone-assistant` to keep the assistant up to date as documents change
-- Use the `pinecone-assistant` skill to retrieve raw context snippets for custom workflows
+- Use the pinecone-assistant skill to retrieve raw context snippets for custom workflows
 - Every assistant is also an MCP server — see https://docs.pinecone.io/guides/assistant/mcp-server
 
 ---
@@ -198,15 +205,16 @@ Explain: Responses include citations with source file and page number.
 
 **`PINECONE_API_KEY` not set**
 
-Create a `.env` file at the workspace root:
-```
-PINECONE_API_KEY=your-key
-```
-The bundled MCP config loads it via Cursor's `envFile` field. For running scripts directly, use `uv run --env-file .env scripts/...` (or `export PINECONE_API_KEY="your-key"` for terminal use). Restart your IDE/agent session after setting.
+- Add `PINECONE_API_KEY=your-key` to a `.env` file at your workspace root. The
+  bundled MCP config reads it through Cursor's `envFile` field.
+- For scripts, either `export PINECONE_API_KEY="your-key"` in your terminal or
+  run them with `uv run --env-file .env scripts/...`.
+
+Restart your IDE or agent session after setting the key.
 
 **MCP tools not available**
 - Verify the Pinecone MCP server is configured in your IDE's MCP settings
-- Check that `PINECONE_API_KEY` is present in your workspace `.env` (or process env) before the MCP server starts
+- Check that `PINECONE_API_KEY` is set before the MCP server starts
 
 **Index already exists**
 - The upsert script is safe to re-run — it will upsert over existing records
