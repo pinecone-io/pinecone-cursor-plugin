@@ -68,7 +68,7 @@ Or install directly from the marketplace: [cursor.com/marketplace/pinecone](http
 
 | Tool | What it enables | Install |
 |------|----------------|---------|
-| [Pinecone CLI](https://docs.pinecone.io/guides/operations/pinecone-cli) (`pc`) | Terminal-based index management, batch operations | `brew tap pinecone-io/tap && brew install pinecone-io/tap/pinecone` |
+| [Pinecone CLI](https://docs.pinecone.io/guides/operations/pinecone-cli) (`pc`) | Terminal-based index management, batch operations | `brew install --cask pinecone-io/tap/pinecone` |
 | [uv](https://docs.astral.sh/uv/) | Run the bundled Python scripts | [Install guide](https://docs.astral.sh/uv/getting-started/installation/) |
 
 ## Getting started
