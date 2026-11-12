@@ -34,8 +34,10 @@ Several skills include Python scripts (run via [`uv`](https://docs.astral.sh/uv/
 
 | Script | Skill | Purpose |
 |--------|-------|---------|
+| `create_index.py` | pinecone-quickstart | Create the quickstart document index |
 | `upsert.py` | pinecone-quickstart | Seed an index with sample data |
 | `quickstart_complete.py` | pinecone-quickstart | Standalone end-to-end quickstart |
+| `search.py` | pinecone-quickstart | Search the index by meaning or by exact terms |
 | `create.py` | pinecone-assistant | Create a new Pinecone Assistant |
 | `upload.py` | pinecone-assistant | Upload files to an assistant |
 | `chat.py` | pinecone-assistant | Chat with an assistant |
